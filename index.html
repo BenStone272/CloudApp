@@ -70,7 +70,7 @@
         emptyNewRow = emptyNewRow + "        <input type='text' class='form-control txtReps' placeholder='Enter Reps'/>";
         emptyNewRow = emptyNewRow + "    </td>";
         emptyNewRow = emptyNewRow + "    <td class='tdMobile' >";
-        emptyNewRow = emptyNewRow + "        <input type='text' class='form-control txtMobile' placeholder='Enter Mobile'/>";
+        emptyNewRow = emptyNewRow + "        <input type='text' class='form-control txtMobile' placeholder='Don't Enter Key'/>";
         emptyNewRow = emptyNewRow + "    </td>";
         emptyNewRow = emptyNewRow + "    <td class='tdAction'>";
         emptyNewRow = emptyNewRow + "        <button class='btn btn-sm btn-success btn-save'> Save</button>";
@@ -163,7 +163,7 @@
 
                 const mobile =$(this).parent().parent().find(".tdMobile").html();
 
-                $(this).parent().parent().find(".tdMobile").html("<input type='text' value='"+mobile+"' class='form-control txtMobile' placeholder='Enter Mobile'/>"); 
+                $(this).parent().parent().find(".tdMobile").html("<input type='text' value='"+mobile+"' class='form-control txtMobile' placeholder='Don't Enter Key'/>"); 
                 $(this).parent().parent().find(".tdAction").html(rowUpdateButtons);
                 console.log("edit")
                 
@@ -241,7 +241,9 @@
         const params = new URLSearchParams(window.location.hash.substr(1));
         const accessToken = params.get('access_token');
         const id_token = params.get('id_token');
-        
+        if(accessToken == null){
+         alert('Not Logged IN');
+        }   
         console.log("accessToken = "+accessToken)
         console.log("id_token = "+id_token)
 
