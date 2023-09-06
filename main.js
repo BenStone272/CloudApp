@@ -105,7 +105,7 @@ function getDate(){
 }
 
 function getData(jsonData){
-    mydata = JSON.parse(jsonData)
+    mydata = jsonData //JSON.parse(jsonData)
     for (var i = 0; i < mydata.length; i++) {
         console.log(mydata[i])
         addGets(mydata[i].Excerise,mydata[i].Weight,mydata[i].Reps,mydata[i].ID)
