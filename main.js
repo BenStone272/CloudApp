@@ -63,7 +63,7 @@ var updateAPI = (key,excerise,weight,reps)=>{
     .catch(error => console.log('error', error));
 }
 
-var deleteAPI = (key)=>{
+var deleteAPI1 = (key)=>{
     // instantiate a headers object
     var myHeaders = new Headers();
     // add content type header to object
@@ -83,6 +83,27 @@ var deleteAPI = (key)=>{
     .then(response => response.text())
     .then(result => console.log(JSON.parse(result).body))
     .catch(error => console.log('error', error));
+}
+function deleteAPI(itemId) {
+  const apiUrl = 'https://bvwxuic990.execute-api.us-east-1.amazonaws.com/prod'; // Replace with your API endpoint
+  const urlWithParam = `${apiUrl}?item_id=${encodeURIComponent(itemId)}`;
+
+  fetch(urlWithParam, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json', // Adjust the content type if needed
+      // Add any other headers if required
+    },
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      console.log(`Item with ID ${itemId} deleted successfully`);
+    })
+    .catch((error) => {
+      console.error(`Delete request failed: ${error}`);
+    });
 }
 
 
