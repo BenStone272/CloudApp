@@ -23,7 +23,7 @@ var callAPI = (u_id,date,excerise,weight,reps,key)=>{
 }
 
 function getAPI  (date,u_id){
-    let url="https://bvwxuic990.execute-api.us-east-1.amazonaws.com/prod?date="date+"&uid="+u_id
+    let url="https://bvwxuic990.execute-api.us-east-1.amazonaws.com/prod?date="+date+"&uid="+u_id
   fetch(url)
   .then((response) => {
     if (!response.ok) {
