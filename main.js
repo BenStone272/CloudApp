@@ -33,6 +33,7 @@ function getAPI  (date,u_id){
   })
   .then((data) => {
     console.log(data); // Process the response data
+    getData(data);
   })
   .catch((error) => {
     console.error(`Fetch error: ${error}`);
