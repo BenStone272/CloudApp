@@ -23,26 +23,20 @@ var callAPI = (u_id,date,excerise,weight,reps,key)=>{
 }
 
 function getAPI  (date,u_id){
-    // instantiate a headers object
-    var myHeaders = new Headers();
-    // add content type header to object
-    myHeaders.append("Authorization", accessToken);
-    myHeaders.append("Content-Type", "application/json");
-    // using built in JSON utility package turn object to string and store in a variable
-    var raw = JSON.stringify({"e_type":"get","date":date,"u_id":u_id});
-    console.log(raw)
-    // create a JSON object with parameters for API call and store in a variable
-    var requestOptions = {
-        method: 'POST',
-        headers: myHeaders,
-        body: raw,				
-        redirect: 'follow'
-    };
-    // make API call with parameters and use promises to get response
-    fetch("https://bvwxuic990.execute-api.us-east-1.amazonaws.com/prod", requestOptions)
-    .then(response => response.text())
-    .then(result =>  getData(result))
-    .catch(error => console.log('error', error));
+    let url="https://bvwxuic990.execute-api.us-east-1.amazonaws.com/prod?date="date+"&uid="+u_id
+  fetch(url)
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    return response.json(); // Parse the response as JSON
+  })
+  .then((data) => {
+    console.log(data); // Process the response data
+  })
+  .catch((error) => {
+    console.error(`Fetch error: ${error}`);
+  });
 }
 
 
@@ -130,7 +124,7 @@ function makeid() {
     return result;
 }
 
-function getAPI  (date,u_id){
+function getAPI1  (date,u_id){
     // instantiate a headers object
     var myHeaders = new Headers();
     // add content type header to object
