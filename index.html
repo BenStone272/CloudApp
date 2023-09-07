@@ -99,7 +99,6 @@
             $('#tblData').on('click', '.btn-save', function () {
                 const dateElement = document.getElementById('pickDate'); // get the date element
                 const dateValue = dateElement.value; // get the value of the date element
-
                 const excerise =  $(this).parent().parent().find(".txtexcerise").val();
                 $(this).parent().parent().find(".tdexcerise").html(""+excerise+""); 
                 const weight =  $(this).parent().parent().find(".txtweight").val();
@@ -111,6 +110,8 @@
                 
                 console.log("save")
                 let key=username+makeid()
+                $(this).closest('tr').attr('value',key);
+                console.log($(this).closest('tr').attr('value'));
                 callAPI(username,dateValue,excerise,weight,reps,key)
                 //console.log(globalID)
                 $(this).parent().parent().find(".tdMobile").html(""+key+"");
