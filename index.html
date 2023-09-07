@@ -129,6 +129,7 @@
                 $(this).parent().parent().find(".tdAction").html(rowButtons);
                 console.log("update")
                 let key=$(this).closest('tr').attr('value');
+                $(this).closest("tr").css({"color": "red", "border": "2px solid red"});
                 console.log("update key is "+ key)
                 updateAPI(key,excerise,weight,reps)
             });
