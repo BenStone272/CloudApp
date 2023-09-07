@@ -124,11 +124,12 @@
                 $(this).parent().parent().find(".tdweight").html(""+weight+"");
                 const reps =  $(this).parent().parent().find(".txtReps").val();
                 $(this).parent().parent().find(".tdReps").html(""+reps+"");
-                const mobile =  $(this).parent().parent().find(".txtMobile").val();
+                const mobile =  $(this).parent().parent().find(".txtMobile").val(); //old way of getting key
                 $(this).parent().parent().find(".tdMobile").html(""+mobile+"");
                 $(this).parent().parent().find(".tdAction").html(rowButtons);
                 console.log("update")
-                updateAPI(mobile,excerise,weight,reps)
+                ley key=$(this).closest('tr').attr('value');
+                updateAPI(key,excerise,weight,reps)
             });
              
             
