@@ -145,7 +145,7 @@
 
             $('#tblData').on('click', '.btn-cancel', function () { 
                 $(this).parent().parent().remove();
-                changedate(date);
+                changedate($("#pickDate").val());
             });
             $('#tblData').on('click', '.btn-edit', function () { 
                 const excerise =$(this).parent().parent().find(".tdexcerise").html();
