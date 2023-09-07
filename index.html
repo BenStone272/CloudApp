@@ -134,8 +134,8 @@
              
             
             $('#tblData').on('click', '.btn-danger', function () { // registering function for delete button  
-                const key =  $(this).parent().parent().find(".tdMobile").html()
-                console.log(key)
+                //const key =  $(this).parent().parent().find(".tdMobile").html() old way of getting key
+                let key=$(this).closest('tr').attr('value');
                 deleteAPI(key)
                 $(this).parent().parent().remove();
                 console.log("delete")
