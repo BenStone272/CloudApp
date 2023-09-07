@@ -126,8 +126,6 @@
                 $(this).parent().parent().find(".tdReps").html(""+reps+"");
                // const mobile =  $(this).parent().parent().find(".txtMobile").val(); //old way of getting key
                 //$(this).parent().parent().find(".tdMobile").html(""+mobile+"");
-                $(this).parent().parent().find(".tdAction").html(rowButtons);
-                console.log("update")
                 let key=$(this).closest('tr').attr('value');
                 $(this).closest("tr").css({"color": "red", "border": "2px solid red"});
                 $(this).closest("td").css({"color": "red", "border": "2px solid red"});
@@ -137,6 +135,9 @@
                 console.log($(this).closest('td').length)
                 console.log("update key is "+ key)
                 updateAPI(key,excerise,weight,reps)
+                $(this).parent().parent().find(".tdAction").html(rowButtons);
+                console.log("update")
+                
             });
              
             
