@@ -128,7 +128,7 @@
                 $(this).parent().parent().find(".tdMobile").html(""+mobile+"");
                 $(this).parent().parent().find(".tdAction").html(rowButtons);
                 console.log("update")
-                ley key=$(this).closest('tr').attr('value');
+                let key=$(this).closest('tr').attr('value');
                 updateAPI(key,excerise,weight,reps)
             });
              
