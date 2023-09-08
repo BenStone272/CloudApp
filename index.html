@@ -247,7 +247,11 @@
         const accessToken = params.get('access_token');
         const id_token = params.get('id_token');
         if(accessToken == null){
-         alert('Not Logged IN');
+            if (confirm("Log In")) {
+              txt = "You pressed OK!";
+            } else {
+              console.log("not logged in")
+            }
         }   
         console.log("accessToken = "+accessToken)
         console.log("id_token = "+id_token)
