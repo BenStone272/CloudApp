@@ -25,7 +25,6 @@ var callAPI = (u_id,date,excerise,weight,reps,key)=>{
 function getAPI  (date,u_id){
     
     let url="https://bvwxuic990.execute-api.us-east-1.amazonaws.com/prod?date="+date+"&uid="+u_id
-    //fetch(url)
     fetch(url, {
     method: 'GET',
     headers: {
@@ -72,27 +71,6 @@ var updateAPI = (key,excerise,weight,reps)=>{
     .catch(error => console.log('error', error));
 }
 
-var deleteAPI1 = (key)=>{
-    // instantiate a headers object
-    var myHeaders = new Headers();
-    // add content type header to object
-    myHeaders.append("Authorization", accessToken);
-    myHeaders.append("Content-Type", "application/json");
-    // using built in JSON utility package turn object to string and store in a variable
-    var raw = JSON.stringify({"e_type":"delete","key":key});
-    // create a JSON object with parameters for API call and store in a variable
-    var requestOptions = {
-        method: 'POST',
-        headers: myHeaders,
-        body: raw,
-        redirect: 'follow'
-    };
-    // make API call with parameters and use promises to get response
-    fetch("https://bvwxuic990.execute-api.us-east-1.amazonaws.com/prod", requestOptions)
-    .then(response => response.text())
-    .then(result => console.log(JSON.parse(result).body))
-    .catch(error => console.log('error', error));
-}
 function deleteAPI(itemId) {
   const apiUrl = 'https://bvwxuic990.execute-api.us-east-1.amazonaws.com/prod'; // Replace with your API endpoint
   const urlWithParam = `${apiUrl}?item_id=${encodeURIComponent(itemId)}`;
@@ -101,6 +79,7 @@ function deleteAPI(itemId) {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json', // Adjust the content type if needed
+       'Authorization': accessToken,
       // Add any other headers if required
     },
   })
