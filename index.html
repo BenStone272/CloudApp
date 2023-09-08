@@ -248,7 +248,7 @@
         const id_token = params.get('id_token');
         if(accessToken == null){
             if (confirm("Log In")) {
-              txt = "You pressed OK!";
+              window.location.href = 'https://gymkeeper.auth.us-east-1.amazoncognito.com/login?response_type=token&client_id=367lf40iplnldb73opaqvk9fmr&redirect_uri=https://main.d2dw3kg2zmglnw.amplifyapp.com/';
             } else {
               console.log("not logged in")
             }
