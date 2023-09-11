@@ -64,10 +64,10 @@
         emptyNewRow = emptyNewRow + "        <input type='text' class='form-control txtexcerise' placeholder='Enter excerise'/>";
         emptyNewRow = emptyNewRow + "    </td>";
         emptyNewRow = emptyNewRow + "    <td class='tdweight'>";
-        emptyNewRow = emptyNewRow + "        <input type='text' class='form-control txtweight' placeholder='Enter weight'/>";
+        emptyNewRow = emptyNewRow + "        <input type='number' class='form-control txtweight' placeholder='Enter weight'/>";
         emptyNewRow = emptyNewRow + "    </td>";
         emptyNewRow = emptyNewRow + "    <td class='tdReps'>";
-        emptyNewRow = emptyNewRow + "        <input type='text' class='form-control txtReps' placeholder='Enter Reps'/>";
+        emptyNewRow = emptyNewRow + "        <input type='number' class='form-control txtReps' placeholder='Enter Reps'/>";
         emptyNewRow = emptyNewRow + "    </td>";
         //emptyNewRow = emptyNewRow + "    <td class='tdMobile' >";
         //emptyNewRow = emptyNewRow + "        <input type='text' class='form-control txtMobile' />";
@@ -159,11 +159,11 @@
 
                 const weight =$(this).parent().parent().find(".tdweight").html();
 
-                $(this).parent().parent().find(".tdweight").html("<input type='text' value='"+weight+"' class='form-control txtweight' placeholder='Enter weight'/>"); 
+                $(this).parent().parent().find(".tdweight").html("<input type='number' value='"+weight+"' class='form-control txtweight' placeholder='Enter weight'/>"); 
 
                 const reps =$(this).parent().parent().find(".tdReps").html();
 
-                $(this).parent().parent().find(".tdReps").html("<input type='text' value='"+reps+"' class='form-control txtReps' placeholder='Enter Reps'/>"); 
+                $(this).parent().parent().find(".tdReps").html("<input type='number' value='"+reps+"' class='form-control txtReps' placeholder='Enter Reps'/>"); 
 
 
                 //const mobile =$(this).parent().parent().find(".tdMobile").html();
@@ -183,10 +183,10 @@
             console.log(excerise)
             FillNewRow = FillNewRow + "    </td>";
             FillNewRow = FillNewRow + "    <td class='tdweight'>";
-            FillNewRow = FillNewRow + "        <input type='text' class='form-control txtweight' value='"+ weight + "'' />";
+            FillNewRow = FillNewRow + "        <input type='number' class='form-control txtweight' value='"+ weight + "'' />";
             FillNewRow = FillNewRow + "    </td>";
             FillNewRow = FillNewRow + "    <td class='tdReps'>";
-            FillNewRow = FillNewRow + "        <input type='text' class='form-control txtReps' value='"+ reps + "'' />";
+            FillNewRow = FillNewRow + "        <input type='number' class='form-control txtReps' value='"+ reps + "'' />";
             FillNewRow = FillNewRow + "    </td>";
            // FillNewRow = FillNewRow + "    <td class='tdMobile'>";
            // FillNewRow = FillNewRow + "        <input type='text' class='form-control txtMobile' value='"+ key + "'' />";
