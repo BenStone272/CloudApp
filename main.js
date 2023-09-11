@@ -48,6 +48,31 @@ function getAPI  (date,u_id){
   });
 }
 
+function getAllData  (u_id){
+    
+    let url="https://bvwxuic990.execute-api.us-east-1.amazonaws.com/prod?date="+"all"+"&uid="+u_id
+    fetch(url, {
+    method: 'GET',
+    headers: {
+      'Authorization': accessToken , // Replace 'Bearer' with the appropriate authorization scheme if needed
+    },
+  })
+
+        
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    return response.json(); // Parse the response as JSON
+  })
+  .then((data) => {
+    console.log(data); // Process the response data
+    console.log("all")
+  })
+  .catch((error) => {
+    console.error(`Fetch error: ${error}`);
+  });
+}
 
 var updateAPI = (key,excerise,weight,reps)=>{
     // instantiate a headers object
@@ -180,5 +205,5 @@ function authAPI2  (accessToken){
     .catch(error => console.log('error', error));
 }
 
-getDate()
+getDate(username)
 
