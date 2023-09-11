@@ -205,7 +205,7 @@ function authAPI2  (accessToken){
     .then(result =>  console.log(result))
     .catch(error => console.log('error', error));
 }
-getDate(username)
+getDate()
 //var emptyRow = "<tr><td colspan='4' class='text-center'> No Records Available</td></tr>";
 var emptyNewRow = "<tr class='trNewRow'>"; 
 emptyNewRow = emptyNewRow + "    <td class='tdexcerise'>";
