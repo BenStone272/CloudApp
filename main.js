@@ -235,7 +235,7 @@ getDate()
 //var emptyRow = "<tr><td colspan='4' class='text-center'> No Records Available</td></tr>";
 var emptyNewRow = "<tr class='trNewRow'>"; 
 emptyNewRow = emptyNewRow + "    <td class='tdexcerise'>";
-emptyNewRow = emptyNewRow + "        <input type='text' class='form-control txtexcerise' placeholder='Enter excerise'/>";
+emptyNewRow = emptyNewRow + "        <input type='text' list='potentials' class='form-control txtexcerise' placeholder='Enter excerise'/>";
 emptyNewRow = emptyNewRow + "    </td>";
 emptyNewRow = emptyNewRow + "    <td class='tdweight'>";
 emptyNewRow = emptyNewRow + "        <input type='number' class='form-control txtweight' placeholder='Enter weight'/>";
