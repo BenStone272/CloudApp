@@ -219,7 +219,7 @@ function getPrs(){
   console.log(prs[0])
   for (const element of unique) {
   
-    $('#mySelect').append('<option value="' + key + '">' + element + '</option>');
+    $('#mySelect').append('<option value="' + element + '">' + element + '</option>');
   
 }
 }
