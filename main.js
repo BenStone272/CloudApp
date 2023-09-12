@@ -215,11 +215,20 @@ function getPrs(){
   for (let i = 0; i < unique.length; i++) {
       prs[i]=[allData[i].Excerise,getMax(allData,unique[i])]
   }
+  exceriseList()
   console.log(prs)
   console.log(prs[0])
-  for (const element of unique) {
-    $('#potentials').append("<option value='" + element + "'>");  
+  
 }
+function exceriseList(){
+    lst.includes("");
+    let lst=["bench","squat","test4","pull-up","bicep curl"]
+    for (const element of unique) {
+          if(!lst.includes(element)){lst.push(element)}
+    }
+    for (const element of lst) {
+        $('#potentials').append("<option value='" + element + "'>");  
+    }
 }
 
 function getMax(arr,exc) {
