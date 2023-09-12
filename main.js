@@ -68,6 +68,10 @@ function getAllData  (u_id){
   })
   .then((data) => {
     console.log(data); // Process the response data
+    const allData=data;
+    const unique = [...new Set(data.map(item => item.Excerise))];
+    getPrs()
+    console.log(unique)
     console.log("all")
   })
   .catch((error) => {
@@ -204,6 +208,24 @@ function authAPI2  (accessToken){
     .then(response => response.text())
     .then(result =>  console.log(result))
     .catch(error => console.log('error', error));
+}
+function getPrs(){
+  let prs=[];
+  for (let i = 0; i < unique.length; i++) {
+      prs[i]=[data[i].Excerise,getMax(data,unique[i])]
+  }
+  console.log(prs)
+  console.log(prs[0])
+}
+
+function getMax(arr,exc) {
+    let maxValue = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i].Weight > maxValue & arr[i].Excerise===exc) {
+            maxValue = arr[i].Weight;
+        }
+    }
+    return maxValue;
 }
 getDate()
 //var emptyRow = "<tr><td colspan='4' class='text-center'> No Records Available</td></tr>";
