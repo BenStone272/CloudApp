@@ -70,8 +70,8 @@ function getAllData  (u_id){
     console.log(data); // Process the response data
     const allData=data;
     console.log(allData)
-    const unique = [...new Set(allData.map(item => item.Excerise))];
-    //getPrs()
+    unique = [...new Set(allData.map(item => item.Excerise))];
+    getPrs()
     console.log(unique)
     console.log("all")
   })
