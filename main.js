@@ -68,7 +68,7 @@ function getAllData  (u_id){
   })
   .then((data) => {
     console.log(data); // Process the response data
-    const allData=data;
+    allData=data;
     console.log(allData)
     unique = [...new Set(allData.map(item => item.Excerise))];
     getPrs()
@@ -213,7 +213,7 @@ function authAPI2  (accessToken){
 function getPrs(){
   let prs=[];
   for (let i = 0; i < unique.length; i++) {
-      prs[i]=[data[i].Excerise,getMax(data,unique[i])]
+      prs[i]=[allData[i].Excerise,getMax(allData,unique[i])]
   }
   console.log(prs)
   console.log(prs[0])
