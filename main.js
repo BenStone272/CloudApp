@@ -69,7 +69,8 @@ function getAllData  (u_id){
   .then((data) => {
     console.log(data); // Process the response data
     const allData=data;
-    const unique = [...new Set(data.map(item => item.Excerise))];
+    console.log(allData)
+    const unique = [...new Set(allData.map(item => item.Excerise))];
     getPrs()
     console.log(unique)
     console.log("all")
