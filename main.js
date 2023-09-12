@@ -71,7 +71,7 @@ function getAllData  (u_id){
     const allData=data;
     console.log(allData)
     const unique = [...new Set(allData.map(item => item.Excerise))];
-    getPrs()
+    //getPrs()
     console.log(unique)
     console.log("all")
   })
