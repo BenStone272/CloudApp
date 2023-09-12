@@ -221,7 +221,6 @@ function getPrs(){
   
 }
 function exceriseList(){
-    lst.includes("");
     let lst=["bench","squat","test4","pull-up","bicep curl"]
     for (const element of unique) {
           if(!lst.includes(element)){lst.push(element)}
